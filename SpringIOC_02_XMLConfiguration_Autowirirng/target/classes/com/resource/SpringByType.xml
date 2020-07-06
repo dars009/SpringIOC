@@ -7,16 +7,29 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
+	<!-- same type oc class object will pick automatically name not matter here in this case --> 
 	
-	<bean id="address" class="com.beans.Address">
+	<!-- <bean id="address" class="com.beans.Address">
+		<property name="landmark" value="Anmbegaon-Pune"></property>
+	</bean> --> 
+	
+	
+	<!-- any name of object no problem --> 
+	
+	<bean id="address1" class="com.beans.Address">
 		<property name="landmark" value="Anmbegaon-Pune"></property>
 	</bean>
 	
-	<bean id="stu" class="com.beans.Student" scope="singleton">
+	<!-- type means class 2 same name object will throw error --> 
+	<bean id="stu" class="com.beans.Student" scope="singleton" autowire="byType">
+
+		<!-- // no need to create address class object 
+			<property name="address">
+				<ref bean="address"/>
+			</property> 
+		-->
+
 		<property name="age" value="33"></property>
-		<property name="address">
-			<ref bean="address"/>
-		</property>
 		<property name="mobileNos">
 			<list>
 				<value>8866888662</value>
