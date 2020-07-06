@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	
+	<context:annotation-config/>
+	
+	<bean id="address" class="com.beans.Address">
+		<property name="landmark" value="Ambegaon-Pune"></property>
+	</bean>
+
+	<bean id="address1" class="com.beans.Address">
+		<property name="landmark" value="Ambegaon-Katrej-Pune"></property>
+	</bean>
+	
+	<!-- type means class 2 same name object will throw error --> 
+	<bean id="stu" class="com.beans.Student" scope="singleton">
+
+		<!-- // no need to create address class object 
+			<property name="address">
+				<ref bean="address"/>
+			</property> 
+		-->
+
+		<property name="age" value="33"></property>
+		<property name="mobileNos">
+			<list>
+				<value>8866888662</value>
+				<value>9925351058</value>
+			</list>
+		</property>
+	</bean>
+</beans>
