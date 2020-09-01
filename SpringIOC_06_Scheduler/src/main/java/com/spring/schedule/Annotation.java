@@ -9,6 +9,7 @@ import java.util.Date;
 @Service
 @EnableScheduling
 public class Annotation {
+	
 	@Scheduled(fixedDelay = 5000)
 	public void fixedDelayTask() throws InterruptedException {
 		System.out.println(new Date() + "ANNOTATION : This runs in a fixed delay");
@@ -24,8 +25,8 @@ public class Annotation {
 		System.out.println(new Date() + "ANNOTATION : This runs in a fixed delay with a initial delay");
 	}
 
-	@Scheduled(cron = "10 * * * * *")
+	@Scheduled(cron = "0/10 * * ? * * ")
 	public void cronTask() {
-		System.out.println(new Date() + "ANNOTATION : This runs in a cron schedule");
+		System.out.println(new Date() + "ANNOTATION CRON : This runs in a cron schedule");
 	}
 }
