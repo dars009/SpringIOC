@@ -3,9 +3,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.test</groupId>
-	<artifactId>SpringIOC_03_JAVAConfiguration</artifactId>
+	<artifactId>SpringIOC_04_InjectPrimitiveFromPropertyFile</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Spring IOC Project With XML Configuration </name>
+	<name>Spring IOC Project With XML and Reading Property File </name>
 	<description>By Darshit Rabadiya</description>
 
 	<properties>
